@@ -19,7 +19,8 @@ This setup sub is located in the module of label caffeine. There are 3 module le
 * setup Fail Level (integer) 
 * LastHovered (string) 
 
-When setup runs it opens a pipeline that creates a new collection and passes it to the first part of the pipeline. 
+When setup runs it opens a pipeline that creates a new collection. The collection will be referred as recs. Recs is then passed to the first part of the pipeline. 
+
 HARVEST CONTROLS 
 This will loop through all controls on the form and check the tag. If the left of the tag matches the prefix, the control will be added to the collection. 
 The collection holds the control name for the key which will prevent duplicates 
@@ -29,6 +30,10 @@ The value of the collection is an array with the following indexes.
 * control tag in it's exact state
 * Clean tag - done later 
 * Errors - blank string for now
+If a control does now have a qualifying tag with the prefix it will not be used in LC. This includes validation checks and other functionality. 
+At the end of this sub we should have only the collection created with the string array. 
+If the collection is empty set error level to  9 and exit pipeline. Setup will check error level and present message box of no valid controls found. LC will end and recs will be cleared. (set recs = nothing) 
+
 
 
 
