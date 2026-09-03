@@ -21,7 +21,7 @@ This setup sub is located in the module of label caffeine. There are 3 module le
 
 When setup runs it opens a pipeline that creates a new collection. The collection will be referred as recs. Recs is then passed to the first part of the pipeline. 
 
-HARVEST CONTROLS 
+## HARVEST CONTROLS 
 This will loop through all controls on the form and check the tag. If the left of the tag matches the prefix, the control will be added to the collection. 
 The collection holds the control name for the key which will prevent duplicates 
 The value of the collection is an array with the following indexes. 
