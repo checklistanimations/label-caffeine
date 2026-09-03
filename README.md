@@ -13,7 +13,7 @@ a VBA framework that can be added into projects to provide modern day button fun
 
 
 # Concept Workflow (Under Construction):
-The line of setupLabelCaffeine will be added to a form initialize event. 
+The line of setupLabelCaffeine(frm) will be added to a form initialize event. The form pointer will be passed in. 
 This setup sub is located in the module of label caffeine. There are 3 module level variables in this module. 
 * LC_PREFIX (static string defaults to LC==) 
 * setup Fail Level (integer) 
@@ -32,7 +32,10 @@ The value of the collection is an array with the following indexes.
 * Errors - blank string for now
 If a control does now have a qualifying tag with the prefix it will not be used in LC. This includes validation checks and other functionality. 
 At the end of this sub we should have only the collection created with the string array. 
-If the collection is empty set error level to  9 and exit pipeline. Setup will check error level and present message box of no valid controls found. LC will end and recs will be cleared. (set recs = nothing) 
+If the collection is empty set error level to  9 and exit pipeline. Setup will check error level and present message box of no valid controls found. LC will end and recs will be cleared. (set recs = nothing). This will probably be a special exit function since we need to destroy the form object as well. . 
+
+### Validate and Sanitize Tag
+The pipeline will look at each tag and verify.... 
 
 
 
