@@ -13,6 +13,30 @@ a VBA framework that can be added into projects to provide modern day button fun
 
 
 # Concept Workflow (Under Construction):
+The line of setupLabelCaffeine will be added to a form initialize event. 
+This setup sub is located in the module of label caffeine. There are 3 module level variables in this module. 
+* LC_PREFIX (static string defaults to LC==) 
+* setup Fail Level (integer) 
+* LastHovered (string) 
+
+When setup runs it opens a pipeline that creates a new collection and passes it to the first part of the pipeline. 
+HARVEST CONTROLS 
+This will loop through all controls on the form and check the tag. If the left of the tag matches the prefix, the control will be added to the collection. 
+The collection holds the control name for the key which will prevent duplicates 
+The value of the collection is an array with the following indexes. 
+* control name (can't pull key jn collections)
+* Control type
+* control tag in it's exact state
+* Clean tag - done later 
+* Errors - blank string for now
+
+
+
+
+
+
+ A static variable of LC_PREFIX will indicate the prefix to check and can be changed. By default it is LC==
+
 * Verify prefix
 * Check for tag formatting
 * check for duplicate keys of useBack = 1 and useBack = 0 in same tag
@@ -23,6 +47,7 @@ a VBA framework that can be added into projects to provide modern day button fun
 * check that stylefroms exist on form / in collection
 * create a simple key exists in collection function
 * clean tag by fixing prefix to ; then split all by ;
+
 
 
 Explanation
